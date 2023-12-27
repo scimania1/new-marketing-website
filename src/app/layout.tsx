@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { openSans } from "./fonts";
+import Navbar from "@/components/ui/navbar";
 
 export const metadata: Metadata = {
   title: "Modern Engineers (India)",
@@ -22,6 +23,7 @@ export default function RootLayout({
         )}
       >
         {/*Navbar here*/}
+        <Navbar />
         <main className="flex flex-col relative">
           <div className="flex-grow flex-1">{children}</div>
         </main>
