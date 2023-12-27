@@ -14,15 +14,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en">
       <body
         className={cn(
-          "relative antialiased font-sans h-full",
+          "relative antialiased font-sans min-h-screen bg-background",
           openSans.className,
         )}
       >
         {/*Navbar here*/}
-        <main className="flex flex-col relative min-h-screen">
+        <main className="flex flex-col relative">
           <div className="flex-grow flex-1">{children}</div>
         </main>
         {/*Footer here*/}
