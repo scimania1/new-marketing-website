@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { openSans } from "./fonts";
+import { chivo, comfortaa, openSans } from "./fonts";
 import Navbar from "@/components/ui/navbar";
+import Footer from "@/components/ui/footer";
 
 export const metadata: Metadata = {
   title: "Modern Engineers (India)",
@@ -18,15 +19,15 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "relative antialiased font-sans min-h-screen bg-background",
-          openSans.className,
+          "relative min-h-screen bg-background font-sans antialiased",
+          comfortaa.className,
         )}
       >
-        {/*Navbar here*/}
         <Navbar />
-        <main className="flex flex-col relative">
-          <div className="flex-grow flex-1">{children}</div>
+        <main className="relative flex min-h-screen flex-col">
+          <div className="flex-1 flex-grow">{children}</div>
         </main>
+        <Footer />
         {/*Footer here*/}
       </body>
     </html>
