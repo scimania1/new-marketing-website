@@ -72,6 +72,9 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      transitionTimingFunction: {
+        "in-quad": "cubic-bezier(0.550, 0.085, 0.680, 0.530)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Logo from "@/assets/MEI Logo.png";
 import navigationLinks from "./links";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -10,18 +8,9 @@ import { motion } from "framer-motion";
 
 export default function MainNav() {
   return (
-    <div className="hidden items-center gap-4 px-8 py-2 md:flex lg:gap-6">
-      <picture className="mr-auto">
-        <Image
-          src={Logo}
-          className="z-30 aspect-square w-14 object-contain"
-          alt="Modern Engineers (India) Logo"
-          priority
-          quality={80}
-        />
-      </picture>
+    <>
       <NavigationLinksDesktop />
-    </div>
+    </>
   );
 }
 
@@ -43,7 +32,7 @@ export function NavigationLinksDesktop() {
         <li key={link.url} className="relative z-10">
           <Link
             href={link.url}
-            className={`rounded-md p-2 outline-offset-[6px] outline-ring transition-all duration-500 ease-in-out hover:text-slate-800 focus:text-slate-800 ${
+            className={`rounded-md p-2 outline-offset-[6px] outline-ring transition-all duration-150 ease-in-quad hover:text-slate-800 focus:text-slate-800 ${
               selectedIdx === idx ? "text-slate-800" : ""
             }`}
             onClick={() => setSelectedIdx(idx)}
@@ -69,7 +58,7 @@ export function NavigationLinksDesktop() {
           {selectedIdx === idx && (
             <motion.div
               layoutId="underline"
-              className="absolute bottom-[-24px] left-[-5px] right-[-5px] h-[2px] rounded-sm bg-blue-500"
+              className="absolute bottom-[-24px] left-[-5px] right-[-5px] h-[2px] rounded-sm bg-primary lg:bottom-[-22px]"
               transition={{
                 duration: 0.3,
               }}
