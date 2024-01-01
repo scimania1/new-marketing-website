@@ -1,6 +1,7 @@
 "use server";
 
 import { createUrl } from "@/lib/utils";
+import { revalidatePath } from "next/cache";
 import { ReadonlyURLSearchParams, redirect } from "next/navigation";
 
 export async function applyFilters(
@@ -14,7 +15,9 @@ export async function applyFilters(
   selectedCategories.forEach((val) => {
     params.append("categories", val);
   });
-  redirect(createUrl("/products", params));
+  const url = createUrl("/products", params);
+  revalidatePath(url);
+  redirect(url);
 }
 
 // export async function clearFilters(searchParams: SearchParams) {
